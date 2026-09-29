@@ -360,7 +360,6 @@ header .icon {
   }
   #con02 .bottom {
     width: 100%;
-
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -381,7 +380,7 @@ header .icon {
   }
   #con02 .bottom_right ul li {
     width: 100%;
-    height: 8vh;
+    height: 100px;
   }
   #con02 .bottom_right img {
     width: 100%;
