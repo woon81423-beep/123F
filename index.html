@@ -155,6 +155,22 @@
           var swiper = new Swiper(".mySwiper", {
             slidesPerView: 4,
             spaceBetween: 30,
+            breakpoints: {
+              0: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+              },
+
+              769: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+
+              1200: {
+                slidesPerView: 4,
+                spaceBetween: 30,
+              },
+            },
             pagination: {
               el: ".swiper-pagination",
               clickable: true,
@@ -365,5 +381,10 @@
         </p>
       </div>
     </footer>
+    <div class="side">
+      <ul>
+        <li><i class="fa-solid fa-circle-arrow-up"></i></li>
+      </ul>
+    </div>
   </body>
 </html>

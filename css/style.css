@@ -106,7 +106,8 @@ header .icon {
   background-color: #fa5019;
 }
 #visual > div {
-  width: 1400px;
+  width: 100%;
+  max-width: 1400px;
   height: 100%;
   position: relative;
   margin: 0px auto;
@@ -187,7 +188,8 @@ header .icon {
 
 /*--------con01---------*/
 #con01 {
-  width: 1400px;
+  width: 100%;
+  max-width: 1400px;
   height: 100vh;
   margin: 0px auto;
   color: #fa5019;
@@ -256,7 +258,8 @@ header .icon {
 }
 /*con02 아랫쪽*/
 #con02 .bottom {
-  width: 1400px;
+  width: 100%;
+  max-width: 1400px;
   /* height: 60vh; */
   display: flex;
   gap: 20px;
@@ -451,7 +454,8 @@ header .icon {
 
 /*--------con04---------*/
 #con04 {
-  width: 1400px;
+  width: 100%;
+  max-width: 1400px;
   height: 100vh;
   margin: 100px auto;
 }
@@ -654,15 +658,30 @@ a {
 @media (max-width: 768px) {
   #con04 {
     width: 100%;
-    height: 130vh;
+    height: auto;
+    min-height: 0;
     margin: 100px auto;
     padding: 0px 10px;
   }
   #con04 .btn {
     margin-top: 30px;
   }
+  #con04 .safe {
+    position: relative;
+    height: auto;
+  }
+
+  #con04 .safe01,
+  #con04 .safe02 {
+    position: static;
+  }
   #con04 ul {
     flex-wrap: wrap;
+     display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 10px;
+    margin: 30px auto;
   }
   #con04 ul li {
     width: calc((100% - 10px) / 2);
@@ -675,12 +694,14 @@ a {
     justify-content: space-around;
     position: relative;
     gap: 10px;
+    min-height: 250px;
   }
 }
 
 /*--------con05---------*/
 #con05 {
-  width: 1400px;
+  width: 100%;
+  max-width: 1400px;
   height: 100vh;
   margin: 0px auto;
 }
@@ -765,7 +786,7 @@ a {
   }
   #con05 .wrap {
     width: 100%;
-    height: 80%;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -781,7 +802,12 @@ a {
   }
   #con05 .kit {
     width: 100%;
+    height: 300px;
+  }
+   #con05 .kit img {
+    width: 100%;
     height: 100%;
+    object-fit: cover;
   }
 }
 
@@ -793,7 +819,8 @@ a {
   width: 100%;
 }
 #con06 > div {
-  width: 1400px;
+  width: 100%;
+  max-width: 1400px;
   height: 60%;
   display: flex;
   justify-content: space-between;
@@ -912,7 +939,8 @@ footer {
 }
 /*footer 상단 리스트*/
 footer div:nth-of-type(1) {
-  width: 1400px;
+  width: 100%;
+  max-width: 1400px;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #999;
@@ -926,7 +954,8 @@ footer div:nth-of-type(1) ul {
 }
 /*footer 중단 리스트*/
 footer div:nth-of-type(2) {
-  width: 1400px;
+  width: 100%;
+  max-width: 1400px;
   display: flex;
   justify-content: space-between;
   padding-bottom: 10px;
@@ -944,7 +973,8 @@ footer a {
 }
 /*footer 하단*/
 footer div:nth-of-type(3) {
-  width: 1400px;
+  width: 100%;
+  max-width: 1400px;
   display: flex;
   justify-content: space-between;
   padding-bottom: 10px;
