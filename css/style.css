@@ -115,40 +115,90 @@ header .icon {
 #visual p {
   position: absolute;
   top: 15%;
-  left: 50%;
+  left: 40%;
   transform: translateX(-50%);
   text-align: center;
   font-weight: 500;
   font-size: 1.2rem;
+  /*글자 무빙*/
+  transform: translateY(50px);
+  transition: 0.5s;
+
+  opacity: 0;
+  /* margin-top: 100px; */
+}
+#visual.on p {
+  transform: translateY(0);
+  opacity: 1;
 }
 #visual h4 {
   font-family: "DM Serif Display", serif;
-  font-size: 10rem;
+  font-size: clamp(110px, 10vw, 160px);
   font-weight: 400;
 }
+#visual h4:nth-of-type(1) {
+  /*글자 무빙*/
+  transform: translateX(200px);
+  transition: 0.5s;
+  transition-delay: 0.5s;
+  opacity: 0;
+}
+#visual.on h4:nth-of-type(1) {
+  /*글자 무빙*/
+  transform: translateX(-50%);
+  opacity: 1;
+}
+#visual h4:nth-of-type(2) {
+  /*글자 무빙*/
+  transform: translateX(200px);
+  transition: 0.5s;
+  transition-delay: 1s;
+  opacity: 0;
+}
+#visual.on h4:nth-of-type(2) {
+  /*글자 무빙*/
+  transform: translateX(-50%);
+  opacity: 1;
+}
+#visual h4:nth-of-type(3) {
+  /*글자 무빙*/
+  transform: translateX(200px);
+  transition: 0.5s;
+  transition-delay: 1.5s;
+  opacity: 0;
+}
+#visual.on h4:nth-of-type(3) {
+  /*글자 무빙*/
+  transform: translateX(-50%);
+  opacity: 1;
+}
+
 #visual h4:nth-of-type(1) {
   position: absolute;
   top: 25%;
   left: 40%;
-  transform: translateX(-50%);
+  /* transform: translateX(-50%); */
 }
 #visual h4:nth-of-type(2) {
   position: absolute;
   top: 40%;
   left: 50%;
-  transform: translateX(-50%);
+  /* transform: translateX(-50%); */
 }
 #visual h4:nth-of-type(3) {
   position: absolute;
   top: 58%;
   left: 60%;
-  transform: translateX(-50%);
+  /* transform: translateX(-50%); */
 }
 /*비주얼 태블릿 반응형*/
 @media (min-width: 769px) and (max-width: 1199px) {
   #visual {
     width: 100%;
     margin: 0px auto;
+  }
+  #visual p {
+    left: 40%;
   }
   #visual > div {
     width: 100%;
@@ -172,7 +222,7 @@ header .icon {
   #visual p {
     position: absolute;
     top: 15%;
-    left: 50%;
+    left: 30%;
     transform: translateX(-50%);
     text-align: center;
     font-weight: 500;
@@ -180,7 +230,7 @@ header .icon {
   }
   #visual h4 {
     font-family: "DM Serif Display", serif;
-    font-size: 6.5rem;
+
     font-weight: 400;
   }
 }
@@ -201,11 +251,26 @@ header .icon {
 #con01 :first-child {
   font-size: 5rem;
   font-weight: 500;
+  transform: translateY(200px);
+  transition: 0.5s;
+  opacity: 0;
+}
+#con01.on :first-child {
+  transform: translateY(0);
+  opacity: 1;
 }
 #con01 :last-child {
   font-size: 2rem;
   text-align: right;
   font-weight: 500;
+  transform: translateY(-200px);
+  transition: 0.5s;
+  transition-delay: 0.5s;
+  opacity: 0;
+}
+#con01.on :last-child {
+  transform: translateY(0);
+  opacity: 1;
 }
 /*con01 태블릿 반응형*/
 @media (min-width: 769px) and (max-width: 1199px) {
@@ -255,8 +320,12 @@ header .icon {
   font-family: "DM Serif Display", serif;
   letter-spacing: 5px;
   line-height: 40vh;
+  margin-bottom: 20px;
 }
 /*con02 아랫쪽*/
+#con02 .high {
+  color: #fa5019;
+}
 #con02 .bottom {
   width: 100%;
   max-width: 1400px;
@@ -273,6 +342,7 @@ header .icon {
   /* width: 40%; */
   height: 100%;
   padding: 20px 10px;
+  margin-bottom: 40px;
 }
 #con02 .bottom ul:last-child {
   display: flex;
@@ -677,7 +747,7 @@ a {
   }
   #con04 ul {
     flex-wrap: wrap;
-     display: flex;
+    display: flex;
     flex-wrap: wrap;
     width: 100%;
     gap: 10px;
@@ -804,7 +874,7 @@ a {
     width: 100%;
     height: 300px;
   }
-   #con05 .kit img {
+  #con05 .kit img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -1098,3 +1168,377 @@ footer div:nth-of-type(3) ul {
     gap: 10px;
   }
 }
+/* ========================================
+   421px ~ 300px 초소형 모바일
+======================================== */
+@media (min-width: 300px) and (max-width: 421px) {
+  #wrap,
+  header,
+  #visual,
+  #con01,
+  #con02,
+  #con03,
+  #con04,
+  #con05,
+  #con06,
+  footer {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+  /* =================
+     header
+  ================= */
+  header {
+    height: 50px;
+    padding: 0 10px;
+  }
+
+  header h1 {
+    font-size: 1rem;
+  }
+
+  /* =================
+     visual
+  ================= */
+  #visual {
+    min-height: 600px;
+  }
+
+  #visual p {
+    width: 90%;
+    top: 14%;
+    font-size: 0.8rem;
+  }
+
+  #visual h4 {
+    font-size: clamp(70px, 13vw, 80px);
+  }
+
+  #visual h4:nth-of-type(1) {
+    top: 28%;
+    left: 35%;
+  }
+
+  #visual h4:nth-of-type(2) {
+    top: 43%;
+    left: 50%;
+  }
+
+  #visual h4:nth-of-type(3) {
+    top: 58%;
+    left: 65%;
+  }
+
+  /* =================
+     con01
+  ================= */
+  #con01 {
+    width: 100%;
+    height: auto;
+    min-height: 600px;
+    margin: 80px auto;
+    padding: 0 15px;
+
+    flex-direction: column;
+    justify-content: center;
+    gap: 80px;
+  }
+
+  #con01 :first-child {
+    font-size: clamp(40px, 13vw, 55px);
+    text-align: center;
+  }
+
+  #con01 :last-child {
+    font-size: clamp(16px, 5vw, 20px);
+    text-align: center;
+  }
+
+  /* =================
+     con02
+  ================= */
+  #con02 {
+    width: 100%;
+    height: auto;
+  }
+
+  #con02 > div:nth-of-type(1) {
+    width: 100%;
+    height: 250px;
+    line-height: 250px;
+    padding: 0 10px;
+
+    font-size: clamp(24px, 8vw, 32px);
+    letter-spacing: 2px;
+  }
+
+  #con02 .bottom {
+    width: 100%;
+    padding: 0 10px;
+    gap: 30px;
+  }
+
+  #con02 .bottom > div {
+    width: 100%;
+    height: auto;
+    padding: 10px 0;
+    gap: 20px;
+  }
+
+  #con02 .bottom_right {
+    width: 100%;
+    height: auto;
+  }
+
+  #con02 .bottom_right ul {
+    width: 100%;
+    gap: 8px;
+  }
+
+  #con02 .bottom_right ul li {
+    width: 100%;
+    height: 80px;
+  }
+
+  /* =================
+     con03
+  ================= */
+  #con03 {
+    width: 100%;
+    height: auto;
+    margin: 70px auto;
+  }
+
+  .swiper {
+    width: 100%;
+    height: 400px;
+  }
+
+  .swiper-slide {
+    border-radius: 15px;
+  }
+
+  /* =================
+     con04
+  ================= */
+  #con04 {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+
+    margin: 80px auto;
+    padding: 0 10px;
+  }
+
+  #con04 h3 {
+    font-size: clamp(20px, 6vw, 26px);
+  }
+
+  #con04 .btn {
+    gap: 8px;
+    margin: 30px 0;
+  }
+
+  #con04 .btn div {
+    width: 105px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 25px;
+  }
+
+  #con04 ul {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px auto;
+  }
+
+  #con04 ul li {
+    width: 100%;
+    min-height: 230px;
+    padding: 15px;
+    gap: 10px;
+  }
+
+  #con04 ul li h4 {
+    font-size: 1.1rem;
+  }
+
+  #con04 ul li p {
+    font-size: 0.9rem;
+    margin-bottom: 60px;
+  }
+
+  #con04 ul i {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 1rem;
+    right: 15px;
+    bottom: 15px;
+  }
+
+  /* =================
+     con04 안전진단
+  ================= */
+  #con04 .safe {
+    position: relative;
+  }
+
+  #con04 .safe01,
+  #con04 .safe02 {
+    position: static;
+  }
+
+  /* =================
+     con05
+  ================= */
+  #con05 {
+    width: 100%;
+    height: auto;
+    margin: 80px auto;
+    padding: 0 15px;
+  }
+
+  #con05 .wrap {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  #con05 .text {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    gap: 15px;
+  }
+
+  #con05 h3 {
+    font-size: 0.75rem;
+  }
+
+  #con05 h4 {
+    font-size: clamp(32px, 10vw, 42px);
+    text-align: center;
+  }
+
+  #con05 .text div {
+    height: 2rem;
+  }
+
+  #con05 .text p {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  #con05 .kit {
+    width: 100%;
+    height: 250px;
+  }
+
+  #con05 .kit img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #con05 .bottomtext {
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+
+  /* =================
+     con06
+  ================= */
+  #con06 {
+    width: 100%;
+  }
+
+  #con06 > div {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 70px 20px;
+    gap: 60px;
+  }
+
+  #con06 .sang > p:first-child {
+    font-size: 0.8rem;
+  }
+
+  #con06 .sang h3 {
+    font-size: clamp(40px, 13vw, 55px);
+  }
+
+  #con06 .sang > p:last-child {
+    font-size: 0.8rem;
+  }
+
+  #con06 .gong {
+    font-size: 0.9rem;
+  }
+
+  /* =================
+     footer
+  ================= */
+  footer {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  footer div:nth-of-type(1) {
+    width: 100%;
+    gap: 10px;
+    font-size: 0.75rem;
+  }
+
+  footer div:nth-of-type(1) ul {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 5px 10px;
+  }
+
+  footer div:nth-of-type(2) {
+    width: 100%;
+    font-size: 0.65rem;
+  }
+
+  footer div:nth-of-type(2) ul {
+    gap: 5px;
+  }
+
+  footer div:nth-of-type(3) {
+    width: 100%;
+    font-size: 0.65rem;
+  }
+
+  footer div:nth-of-type(3) ul {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+}
+/* 전체 요소가 padding 때문에 화면 밖으로 나가지 않게 */
+/* *,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+} */

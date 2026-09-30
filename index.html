@@ -84,7 +84,7 @@
         <div class="bottom">
           <!--con02 아랫글 왼쪽-->
           <div>
-            <p>HIGH-END ARCHITECTURE</p>
+            <p class="con02 high">HIGH-END ARCHITECTURE</p>
             <h3>하이엔드를 재정의할 하이엔드 건축</h3>
             <p>
               최정상의 공간일수록 더욱 깊은 철학과 감각이 필요하다는 것을
@@ -146,37 +146,6 @@
           </div>
           <div class="swiper-pagination"></div>
         </div>
-
-        <!-- Swiper JS -->
-        <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
-
-        <!-- Initialize Swiper -->
-        <script>
-          var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 4,
-            spaceBetween: 30,
-            breakpoints: {
-              0: {
-                slidesPerView: 2,
-                spaceBetween: 10,
-              },
-
-              769: {
-                slidesPerView: 3,
-                spaceBetween: 20,
-              },
-
-              1200: {
-                slidesPerView: 4,
-                spaceBetween: 30,
-              },
-            },
-            pagination: {
-              el: ".swiper-pagination",
-              clickable: true,
-            },
-          });
-        </script>
       </div>
       <!--------------con04----------------->
       <div id="con04">
@@ -386,5 +355,57 @@
         <li><i class="fa-solid fa-circle-arrow-up"></i></li>
       </ul>
     </div>
+    <!--스크립트-->
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        breakpoints: {
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          421: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
+
+          769: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+
+          1200: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+          },
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+      //비주얼 스크립트
+      $(window).on("scroll", function () {
+        let sc = $(window).scrollTop();
+        // console.log(sc);
+      
+        let pg02 = $("#con01").offset().top;
+
+        if (sc >= pg02 - 200) {
+          $("#con01").addClass("on");
+        } else {
+          $("#con01").removeClass("on");
+        }
+      });
+      $(window).on("mouseenter", function () {
+        $("#visual").addClass("on");
+        // $("#visual").removeClass("on");
+      });
+    </script>
   </body>
 </html>
