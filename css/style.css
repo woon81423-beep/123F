@@ -119,6 +119,7 @@ header .icon {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 #visual p {
   /* position: absolute;
@@ -156,12 +157,12 @@ header .icon {
   top: 25%;
   left: 40%; */
   transform: translateX(-20%);
-  animation: move02 0.5s ease;
+  animation: move02 1s ease;
 }
 #visual h4:nth-of-type(2) {
   position: relative;
   /* transform: translateX(-50%); */
-  animation: move03 1.5s ease;
+  animation: move03 1s ease;
 }
 #visual h4:nth-of-type(3) {
   /* position: absolute;
@@ -1227,8 +1228,7 @@ footer div:nth-of-type(3) ul {
     text-align: center;
   }
   #visual p {
-    width: 90%;
-    top: 14%;
+    width: 100%;
     font-size: clamp(0.7rem, 10vw, 10px);
   }
   /* #visual {
@@ -1580,6 +1580,7 @@ body {
   font-size: 2rem;
   display: none;
   cursor: pointer;
+  z-index: 10;
 }
 .side.angle {
   display: block;
