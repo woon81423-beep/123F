@@ -146,7 +146,7 @@ header .icon {
 }
 #visual h4 {
   font-family: "DM Serif Display", serif;
-  font-size: clamp(110px, 10vw, 180px);
+  font-size: clamp(130px, 10vw, 180px);
   font-weight: 400;
   text-align: center;
 }
@@ -156,12 +156,12 @@ header .icon {
   top: 25%;
   left: 40%; */
   transform: translateX(-20%);
-  animation: move02 1s ease;
+  animation: move02 0.5s ease;
 }
 #visual h4:nth-of-type(2) {
   position: relative;
   /* transform: translateX(-50%); */
-  animation: move03 1s ease;
+  animation: move03 1.5s ease;
 }
 #visual h4:nth-of-type(3) {
   /* position: absolute;
@@ -1221,12 +1221,12 @@ footer div:nth-of-type(3) ul {
   ================= */
 
   #visual h4 {
-  font-family: "DM Serif Display", serif;
-  font-size: clamp(60px, 10vw, 180px);
-  font-weight: 400;
-  text-align: center;
-}
- #visual p {
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(60px, 10vw, 180px);
+    font-weight: 400;
+    text-align: center;
+  }
+  #visual p {
     width: 90%;
     top: 14%;
     font-size: clamp(0.7rem, 10vw, 10px);
@@ -1569,3 +1569,18 @@ body {
   max-width: 100%;
   overflow-x: hidden;
 } */
+
+/*옆쪽 고정 화살표 & 공유*/
+.side {
+  position: absolute;
+  position: fixed;
+  bottom: 2vw;
+  right: 1vh;
+  color: #fa5019;
+  font-size: 2rem;
+  display: none;
+  cursor: pointer;
+}
+.side.angle {
+  display: block;
+}

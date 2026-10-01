@@ -350,11 +350,11 @@
         </p>
       </div>
     </footer>
-    <!-- <div class="side">
+    <div class="side">
       <ul>
         <li><i class="fa-solid fa-circle-arrow-up"></i></li>
       </ul>
-    </div> -->
+    </div>
     <!--스크립트-->
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
@@ -400,6 +400,25 @@
           $("#con01").addClass("on");
         }
       });
+
+      //사이드 화살표 스트립트
+      $(window).on("scroll", function () {
+        let pos = $(this).scrollTop();
+        if (pos >= 500) {
+          //   $(".btn").show();
+          // } else {
+          //   $(".btn").hide();
+          // }
+
+          $(".side").addClass("angle");
+        } else {
+          $(".side").removeClass("angle");
+        }
+      });
+      $(".side").on("click", function () {
+        $("html").animate({ scrollTop: "0px" });
+      });
+
       // $(window).on("mouseenter", function () {
       //   $("#visual").addClass("on");
       //   // $("#visual").removeClass("on");
