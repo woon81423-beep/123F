@@ -350,11 +350,11 @@
         </p>
       </div>
     </footer>
-    <div class="side">
+    <!-- <div class="side">
       <ul>
         <li><i class="fa-solid fa-circle-arrow-up"></i></li>
       </ul>
-    </div>
+    </div> -->
     <!--스크립트-->
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
@@ -393,17 +393,17 @@
       $(window).on("scroll", function () {
         let sc = $(window).scrollTop();
         // console.log(sc);
-      
+
         let pg02 = $("#con01").offset().top;
 
         if (sc >= pg02 - 200) {
           $("#con01").addClass("on");
-        } 
+        }
       });
-      $(window).on("mouseenter", function () {
-        $("#visual").addClass("on");
-        // $("#visual").removeClass("on");
-      });
+      // $(window).on("mouseenter", function () {
+      //   $("#visual").addClass("on");
+      //   // $("#visual").removeClass("on");
+      // });
     </script>
   </body>
 </html>

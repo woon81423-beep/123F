@@ -9,6 +9,11 @@
   font-family: "IBM Plex Sans KR", sans-serif;
   font-family: "Noto Sans", sans-serif;
 }
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
 ul {
   list-style: none;
 }
@@ -109,87 +114,99 @@ header .icon {
   width: 100%;
   max-width: 1400px;
   height: 100%;
-  position: relative;
+  /* position: relative; */
   margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 #visual p {
-  position: absolute;
+  /* position: absolute;
   top: 15%;
-  left: 40%;
-  transform: translateX(-50%);
+  left: 40%; */
+  /* transform: translateX(-50%); */
   text-align: center;
   font-weight: 500;
   font-size: 1.2rem;
   /*글자 무빙*/
-  transform: translateY(50px);
-  transition: 0.5s;
-
-  opacity: 0;
+  animation: move 1s ease;
   /* margin-top: 100px; */
+  text-align: center;
 }
-#visual.on p {
-  transform: translateY(0);
-  opacity: 1;
+@keyframes move {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 #visual h4 {
   font-family: "DM Serif Display", serif;
-  font-size: clamp(110px, 10vw, 160px);
+  font-size: clamp(110px, 10vw, 180px);
   font-weight: 400;
-}
-#visual h4:nth-of-type(1) {
-  /*글자 무빙*/
-  transform: translateX(200px);
-  transition: 0.5s;
-  transition-delay: 0.5s;
-  opacity: 0;
-}
-#visual.on h4:nth-of-type(1) {
-  /*글자 무빙*/
-  transform: translateX(-50%);
-  opacity: 1;
-}
-#visual h4:nth-of-type(2) {
-  /*글자 무빙*/
-  transform: translateX(200px);
-  transition: 0.5s;
-  transition-delay: 1s;
-  opacity: 0;
-}
-#visual.on h4:nth-of-type(2) {
-  /*글자 무빙*/
-  transform: translateX(-50%);
-  opacity: 1;
-}
-#visual h4:nth-of-type(3) {
-  /*글자 무빙*/
-  transform: translateX(200px);
-  transition: 0.5s;
-  transition-delay: 1.5s;
-  opacity: 0;
-}
-#visual.on h4:nth-of-type(3) {
-  /*글자 무빙*/
-  transform: translateX(-50%);
-  opacity: 1;
+  text-align: center;
 }
 
 #visual h4:nth-of-type(1) {
-  position: absolute;
+  /* position: absolute;
   top: 25%;
-  left: 40%;
-  /* transform: translateX(-50%); */
+  left: 40%; */
+  transform: translateX(-20%);
+  animation: move02 1s ease;
 }
 #visual h4:nth-of-type(2) {
-  position: absolute;
-  top: 40%;
-  left: 50%;
+  position: relative;
   /* transform: translateX(-50%); */
+  animation: move03 1s ease;
 }
 #visual h4:nth-of-type(3) {
-  position: absolute;
+  /* position: absolute;
   top: 58%;
-  left: 60%;
-  /* transform: translateX(-50%); */
+  left: 60%; */
+  transform: translateX(20%);
+  animation: move04 1s ease;
+}
+@keyframes move02 {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+    transition-delay: 0.5s;
+  }
+
+  to {
+    transform: translateY(0);
+    transform: translateX(-20%);
+    opacity: 1;
+  }
+}
+@keyframes move03 {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+    transition-delay: 0.5s;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes move04 {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+    transition-delay: 0.5s;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+    transform: translateX(20%);
+  }
 }
 /*비주얼 태블릿 반응형*/
 @media (min-width: 769px) and (max-width: 1199px) {
@@ -197,16 +214,14 @@ header .icon {
     width: 100%;
     margin: 0px auto;
   }
-  #visual p {
-    left: 40%;
-  }
-  #visual > div {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    margin: 0px auto;
-  }
 }
+#visual > div {
+  width: 100%;
+  height: 100%;
+  /* position: relative; */
+  margin: 0px auto;
+}
+
 /*비주얼 모바일 반응형*/
 @media (max-width: 768px) {
   #visual {
@@ -216,15 +231,15 @@ header .icon {
   #visual > div {
     width: 100%;
     height: 100%;
-    position: relative;
+
     margin: 0px auto;
   }
   #visual p {
-    position: absolute;
+    /* position: absolute;
     top: 15%;
     left: 30%;
     transform: translateX(-50%);
-    text-align: center;
+    text-align: center; */
     font-weight: 500;
     font-size: 1rem;
   }
@@ -1204,7 +1219,19 @@ footer div:nth-of-type(3) ul {
   /* =================
      visual
   ================= */
-  #visual {
+
+  #visual h4 {
+  font-family: "DM Serif Display", serif;
+  font-size: clamp(60px, 10vw, 180px);
+  font-weight: 400;
+  text-align: center;
+}
+ #visual p {
+    width: 90%;
+    top: 14%;
+    font-size: clamp(0.7rem, 10vw, 10px);
+  }
+  /* #visual {
     min-height: 600px;
   }
 
@@ -1215,7 +1242,7 @@ footer div:nth-of-type(3) ul {
   }
 
   #visual h4 {
-    font-size: clamp(70px, 13vw, 80px);
+    font-size: clamp(60px, 18vw, 75px);
   }
 
   #visual h4:nth-of-type(1) {
@@ -1231,7 +1258,7 @@ footer div:nth-of-type(3) ul {
   #visual h4:nth-of-type(3) {
     top: 58%;
     left: 65%;
-  }
+  } */
 
   /* =================
      con01
